@@ -17,8 +17,11 @@ jobs:
         run: sudo service mysql start
       - name: Create test database
         run: |
+          sudo /etc/init.d/mysql start
           mysql -uroot -proot < databases/create_databases.sql
           ./gradlew testMigrate
+      - name: chmod permissions
+        run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew clean build
       - name: Publish allocations artifact
