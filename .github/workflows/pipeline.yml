@@ -15,13 +15,13 @@ jobs:
           java-version: 11
       - name: Startup test database instance
         run: sudo service mysql start
+      - name: chmod permissions
+        run: chmod +x ./gradlew
       - name: Create test database
         run: |
           sudo /etc/init.d/mysql start
           mysql -uroot -proot < databases/create_databases.sql
           ./gradlew testMigrate
-      - name: chmod permissions
-        run: chmod +x ./gradlew
       - name: Build with Gradle
         run: ./gradlew clean build
       - name: Publish allocations artifact
