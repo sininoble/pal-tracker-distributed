@@ -1,4 +1,4 @@
-applications:
+applications:V
 - name: tracker-timesheets
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
@@ -9,3 +9,4 @@ applications:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
   services:
   - tracker-timesheets-database
+  - tracker-service-registry
