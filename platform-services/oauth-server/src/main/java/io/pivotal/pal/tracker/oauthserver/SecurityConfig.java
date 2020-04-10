@@ -1,4 +1,5 @@
 package io.pivotal.pal.tracker.oauthserver;
+
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
